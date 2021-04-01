@@ -32,6 +32,8 @@ dependencies {
     implementation("io.grpc:grpc-stub:1.17.1")
     implementation("io.grpc:grpc-kotlin-stub:1.0.0")
     implementation ("io.grpc:grpc-protobuf:1.17.1")
+    implementation ("io.grpc:grpc-netty:1.17.1") // grpcVersion
+    implementation ("io.grpc:grpc-netty-shaded:1.17.1") // grpcVersion
     testImplementation(kotlin("test-junit"))
 
     if (JavaVersion.current().isJava9Compatible) {
@@ -41,14 +43,14 @@ dependencies {
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.13.0"
+        artifact = "com.google.protobuf:protoc:3.13.0"  // protobufVersion
     }
     plugins {
         id("grpc") {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.17.1"
+            artifact = "io.grpc:protoc-gen-grpc-java:1.17.1"    // grpcVersion
         }
         id("grpckt") {
-            artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0:jdk7@jar"
+            artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0:jdk7@jar"  // grpcKotlinVersion
         }
     }
     generateProtoTasks {
