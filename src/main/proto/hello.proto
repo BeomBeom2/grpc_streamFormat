@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package com.snowdeer;
+package com.main;
+option java_package="com.main.proto";
 option java_outer_classname = "Hello";
 
 service HelloService {
